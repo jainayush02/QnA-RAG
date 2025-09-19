@@ -9,7 +9,7 @@ from langchain_community.embeddings import OllamaEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain_community.vectorstores import FAISS, Chroma
+from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import PyPDFDirectoryLoader, PyPDFLoader
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain_community.chat_message_histories import ChatMessageHistory
@@ -64,7 +64,7 @@ if api_key:
         #Split and create embeddings for the the documents
         text_splitter = RecursiveCharacterTextSplitter(chunk_size = 1000, chunk_overlap=200)
         splits = text_splitter.split_documents(documents)
-        vectore_store = Chroma.from_documents(documents=splits, embedding=embeddings)
+        vectore_store = FAISS.from_documents(documents=splits, embedding=embeddings)
         retriever = vectore_store.as_retriever()
 
         contextualize_q_style_system_prompt=(
