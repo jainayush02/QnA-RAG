@@ -1,10 +1,9 @@
-ipykernel
+streamlit
 pandas
 numpy
 python-dotenv
-arxiv
-langchain_core
-langchain_chroma
+langchain-core
+langchain-chroma
 langchain-groq
 chromadb
 faiss-cpu
@@ -13,7 +12,7 @@ pypdf
 bs4
 wikipedia
 langchain-community
-sentence_transformers
+sentence-transformers
 duckdb
 duckduckgo-search
 pytube
@@ -21,8 +20,8 @@ numexpr
 unstructured
 validators
 SQLAlchemy
-youtube_transcript_api
+youtube-transcript-api
 pymupdf
-arxiv
-langchain-huggingface==0.0.3
-torch==2.1.0
+torch
+transformers
+huggingface-hub
