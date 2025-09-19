@@ -19,3 +19,22 @@ __pycache__/
 # Ignore system files
 .DS_Store
 Thumbs.db
+
+# Ignore Jupyter notebooks
+ok.ipynb
+
+# Ignore main app file
+app.py
+
+# Ignore research folder
+research_paper/
+
+# Ignore temp files
+*.pdf
+
+# Ignore Python venv
+.venv/
+venv/
+ENV/
+env/
+rag/Lib/
