@@ -4,6 +4,7 @@ import os
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
 from langchain_groq import ChatGroq
+
 from langchain_community.embeddings import OllamaEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.chains.combine_documents import create_stuff_documents_chain
@@ -13,14 +14,15 @@ from langchain_community.document_loaders import PyPDFDirectoryLoader, PyPDFLoad
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.chat_history import BaseChatMessageHistory
-from langchain_huggingface import HuggingFaceEmbeddings
+
+from langchain_community.embeddings import HuggingFaceEmbeddings
 
 
 from dotenv import load_dotenv
 load_dotenv()
 
 os.environ['HF_Token'] = os.getenv("HF_Token")
-embeddings =  HuggingFaceEmbeddings(model_name = "all-MiniLM-L6-v2")
+embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
 #setup streamlit
 st.title("Conversational RAG with PDF uploads and chat History")
